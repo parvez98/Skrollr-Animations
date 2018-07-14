@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Skollr</title>
-	<link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -31,25 +31,25 @@
   			height: 50%;
   		}
   		#slide-1{
-  			background: url(slide-1.jpg) no-repeat center center;
+  			background: url(slide1.jpg) no-repeat center center;
   			background-size: cover;
   		}
   		#slide-2{
-  			background: url(slide-2.jpg) no-repeat center center;
+  			background: url(slide2.jpg) no-repeat center center;
   			background-size: cover;
   			-webkit-transform: translate(0,100%);  	
   			-ms-transform: translate(0,100%);
   			transform: translate(0,100%);
   		}
   		#slide-3{
-  			background: url(slide-3.jpg) no-repeat center center;
+  			background: url(slide3.jpg) no-repeat center center;
   			background-size: cover;
   			-webkit-transform: translate(100%,100%);  	
   			-ms-transform: translate(100%,100%);
   			transform: translate(100%,100%);
   		}
   		#slide-4{
-  			background: url(slide-4.jpg) no-repeat center center;
+  			background: url(slide4.jpg) no-repeat center center;
   			background-size: cover;
   			-webkit-transform: translate(100%,0);  	
   			-ms-transform: translate(100%,0);
@@ -79,37 +79,39 @@
   			background-color: yellow;
   		}
   		h1{
-  			font-family: 'Chela One', cursive;
+        font-family: 'Gaegu', cursive;
   			color: white;
-  			font-size: 100px;
+  			font-size: 40px;
   			text-decoration: bold;
   		}
   		#slide-1 .caption{
   			position: absolute;
   			bottom: 5%;
   			right: 5%;
+        background-color: black;
   		}
   		#slide-2 .caption{
   			position: absolute;
   			left: 5%;
   			bottom: 5%;
+        background-color: black;
   		}
   		#slide-3 .caption{
   			position: absolute;
   			left: 5%;
   			bottom: 0%;
+        background-color: black;
   		}
   		#slide-4 .caption{
   			position: absolute;
-  			left: 5%;
-  			top: 5%;
-  			color: black;
+  			right: 5%;
+  			top: 80%;
+        text-align: center;
+  			background-color: black;
   		}
   	</style>
 </head>
 <body>
-	<!--data-center-top: animation will start when the top of the div reaches te center of the screen-->
-	<!--data-top-top: animation will end when the top of the div reaches the top of the screen-->
 
 	<div id="slides-container">
 		<div id="slides"
@@ -119,24 +121,41 @@
 			data-300p="transform:translate(-50%, -50%);"
 			data-350p=""
 			data-400p="transform:translate(-50%, 0%);">
+      <!--Using relative mode-->
 			<div id="slide-1" class="slide">
-				<div class="caption">
-					<h1>One Direction</h1>
+				<div class="caption"
+            data-center-top="opacity: 0;"
+            data-center-bottom="opacity: 1;"
+            data-anchor-target="#slide-1 h1">
+					<h1>Hello, Earth! I want to apologize for hurting you</h1>
 				</div>
 			</div>
 			<div id="slide-2" class="slide">
-				<div class="caption">
-					<h1>The Vamps</h1>
+				<div class="caption"
+            data-center="bottom: 5%;"
+            data-bottom-bottom="bottom: 80%;"
+            data-anchor-target="#slide-2 h1">
+					<h1>I wish I could vanish your sufferings, but I can't</h1>
 				</div>
 			</div>
+
+      <!--Using absolute mode-->
 			<div id="slide-3" class="slide">
-				<div class="caption">
-					<h1>5 Seconds of Summer</h1>
+				<div class="caption"
+              data-250p="opacity: 1; bottom: 5%;"
+              data-300p="opacity: 1;"
+              data-350p="opacity: 1;"
+              data-400p="opacity: 0; bottom: 80%;"
+              data-anchor-target="#slide-3 h1">
+					<h1>Every night I dream of you, beautiful as always</h1>
 				</div>
 			</div>
 			<div id="slide-4" class="slide">
-				<div class="caption">
-					<h1>Justin Bieber</h1>
+				<div class="caption"
+              data-380p="right: -45%;"
+              data-400p="right: 30%;"
+              data-anchor-target="#slide-4 h1">
+					<h1>Thank you for your sacrifices<br>I hope to do the same one day</h1>
 				</div>
 			</div>
 		</div>

@@ -6,96 +6,167 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
-		.hsContainer{
-			display: table;
-			table-layout: fixed;
-			overflow: hidden;
-		}
-		.hsContent{
-			height: 700px;
-			display: table-cell;
-			vertical-align: middle;
+		body{
+			background-color: #003791;
 			color: white;
-			padding: 0 8%;
 			text-align: center;
 		}
 		.bcg{
 			background-position: center center;
+			background-size: cover;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
-			background-size: cover;
-			
+			height: 100%;
+			width: 100%;
+		}
+		.hsContainer{
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.hsContent{
+			height: 550px;
+			max-width: 450px;
+			margin: -150px auto 0 auto;
+			display: table-cell;
+			padding: 0 8%;
 		}
 		#slide-1 .bcg{
-			background-image: url(slide-1.jpg)
+			background-image: url(slide-1.jpg);
 		}
 		#slide-2 .bcg{
-			background: none;
 			background-color: #010101;
 			height: 310px;
 			text-align: center;
 		}
 		#slide-3 .bcg{
-			background-image: url(slide-3.jpg);
+			background-image: url(slide2.jpg);
+			background-repeat: repeat-x;
 		}
+		#slide-4 .bcg{
+			background-color: black;
+			height: 400px;
+			text-align: center;
+		}
+		/*#slide-4{
+			position: relative;
+		}*/
+		#slide-1 h1{
+			font-size: 100px;
+			position: absolute;
+			bottom: 5%;
+		}
+		#slide-2 h1{
+			font-size: 70px;
+		}
+		#footer{
+			padding-top: 30px;
+			height: 160px;
+  			background-color: #f2f2f2;
+  		}
+  		#footer strong{
+  			text-decoration: underline;
+  		}
+  		#footer span{
+  			color: black;
+  			width: 80px;
+  		}
 	</style>
 </head>
 <body>
 
 	<section id="slide-1" class="homeSlide">
+		<!--50% 0px: align 50% point of bcg with 100% of slide-1 and moves down by 0px-->
+		<!--animation starts when image's bottom is at the center of viewport-->
+		<!--animation will end when image's bottom reaches the top of the viewport-->
 		<div class="bcg"
-			data-center="background-position: 50% 0px;"
-			data-top-bottom="background-position: 50% -100px;"
-			data-anchor-target="#slide-1">
-				<div class="hsContainer">
-					<div class="hsContent"
-					 data-center="opacity: 1"
-					 data-106-top="opacity: 0"
-					 data-anchor-target="#slide-1">
-					</div>
+		data-center-bottom="background-position: 50% 0px;"
+		data-top-bottom="background-position: 50% -80px;"
+		data-anchor-target="#slide-1">
+			<div class="hsContainer">
+				<!--animation starts when bottom of slide-1 is at bottom of viewport, opacity 1-->
+				<!--animation ends when bottom of slide-1 is center of viewport, opacity 0-->
+				<div class="hsContent"
+				data-bottom-bottom="opacity: 1;"
+				data-center-bottom="opacity: 0;"
+				data-anchor-target="#slide-1">
+					<h1>One Direction</h1>
 				</div>
 			</div>
+		</div>
 	</section>
 
 	<section id="slide-2">
+		<!--color green initially. color slowly changes to black when top of slide-2 reaches top of viewport-->
 		<div class="bcg"
-		data-0="background-color:rgb(1, 27, 59);"
-		data-top="background-color:(0, 0, 0);"
+		data-0="background-color: rgb(40, 145, 21);"
+		data-top="background-color: rgb(0, 0, 0);"
 		data-anchor-target="#slide-2">
 			<div class="hsContainer">
+				<!--when animation starts, top of slide-2 reaches center of viewport, opacity 0-->
+				<!--when slide-2 reaches center of viewport, opacity 1-->
+				<!--when animation ends, bottom of slide-2 reaches top of viewport, opacity 0-->
 				<div class="hsContent">
-					<!--<h2
-						data--200-bottom="opacity: 0"
-						data-center="opacity: 1"
-						data-206-top="opacity: 1"
-						data-106-top="opacity: 0"
-						data-anchor-target="#slide-2 h2">Fade in then out</h2>-->
+					<h1
+					data-center-top="opacity: 0;"
+					data-center="opacity: 1;"
+					data-top-bottom="opacity: 0;"
+					data-anchor-target="#slide-2 h1">The Vamps</h1>
+					<p
+					data-bottom-top="opacity: 0;"
+					data-center="opacity: 1;"
+					data-top-bottom="opacity: 0;"
+					data-anchor-target="#slide-2 p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus ante massa, vitae vestibulum dolor facilisis nec. Aenean rhoncus, felis id tempor rutrum, enim purus condimentum sem, in faucibus mauris tortor nec augue. Quisque auctor ornare elit id pulvinar. Sed vel libero egestas, ultrices justo eget, commodo erat. Vestibulum rutrum justo non urna fermentum mattis. Sed eget fringilla massa. Mauris felis nulla, dapibus ac tellus ultrices, pulvinar mollis enim. Integer neque ipsum, aliquet non elit non, viverra sagittis mi. Vivamus elit augue, pellentesque et turpis vitae, aliquet faucibus felis. Aliquam cursus nisi ut turpis consectetur, sed dictum ante ultricies.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="slide-3" class="homeSlide">
+	<section id="slide-3">
 		<div class="bcg"
-			data-center="background-position: 0px 50%;"
-			data-bottom-top="background-position: 0px 40%;"
-			data-top-bottom="background-position: -40px 50%;"
-			data-anchor-target="slide-3">
+		data-center="background-position: 0px 50%;"
+		data-top-bottom="background-position: -30px 50%;"
+		data-anchor-target="#slide-3">
 			<div class="hsContainer">
 				<div class="hsContent">
-					<div class="plaxEl"
-						data-106-top="opacity: 0"
-						data-bottom="opacity: 1; position: fixed; top: 206px; width: 100%; top:0;"
-						data--30p-top="opacity:1;"
-						data--60p-top="opacity: 0;"
-						data-anchor-target="slide-3">
-						<h2>Fixed Element</h2>
-					</div>
+					<!--<div class="move"
+					data-106-top="opacity: 0;"
+					data-bottom="opacity: 1 position: fixed; top: 206px; width: 100%; left: 0;"
+					data--30p-top="opacity: 1;"
+					data--60p-top="opacity: 0;"
+					data-anchor-target="#slide-3">
+					</div>-->
 				</div>
 			</div>
-			
 		</div>
 	</section>
+
+	<section id="slide-4">
+		<div class="bcg">
+			<div class="hsContainer">
+				<div class="hsContent">
+					<h2
+					data-100-bottom="opacity: 0;"
+					data-bottom="opacity: 1;"
+					data-anchor-target="#slide-4">The ENd!</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--MADE BY-->
+	<footer id="footer" class="container-fluid text-center">
+		<br>
+		<span class="glyphicon glyphicon-headphones"></span>
+		<span class="glyphicon glyphicon-pencil"></span>
+		<span class="glyphicon glyphicon-book"></span>
+		<p style="color: black;">Made by <strong style="color: #397eef;">Soha Parvez</strong></p>
+		<p><kbd>always + learning</kbd></p>
+		<br>
+	</footer>
 
 	<script src="skrollr.min.js"></script>
 	<script>

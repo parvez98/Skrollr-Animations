@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Falling Girl</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		body{
+			background-color: #c0c3c6;
+			color: #ffffff;
+		}
+		.bcg{
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		.hsContainer{
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.hsContent{
+			height: 615px;
+			display: table-cell;
+			padding: 0 8%;
+		}
+		#slide-1 .bcg{
+			background: linear-gradient(#000000, #1f3284);
+		}
+		#slide-2 .bcg{
+			background: linear-gradient(#1f3284, #3147a5);
+			/*background: linear-gradient(#1f3284, #000000);*/
+		}
+		#slide-3 .bcg{
+			background: linear-gradient(#3147a5, #0077ef);
+		}
+		#slide-4 .bcg{
+			background: linear-gradient(#0077ef, #4ca5ff);
+		}
+		#slide-5 .bcg{
+			background-color: #4ca5ff;
+		}
+		.girl{
+			background-image: url('http://stash.rachelnabors.com/codepen/alice/alice-fall-saebaba4ad9.png');
+			width: 30%;
+			padding-top: 48.73047%;
+			top: -10%;
+			left: 50%;
+			margin-left: -15.625%;
+			position: fixed;
+			z-index: 20;
+		}
+		@keyframes freak-out{
+			0%{
+				background-position: 0 0 ;
+			}
+			100%{
+				background-position: 0 200%;
+			}
+		}
+		.falling-girl .girl{
+			animation: freak-out 1.5s steps(2) infinite;
+			background: url('http://stash.rachelnabors.com/codepen/alice/alice-frightened-s41f9b8ddd1.png') 0 0 no-repeat;
+  			background-size: 100% auto;
+		}
+		.stars{
+			width: 100%;
+			height: 100%;
+			background-image: url("stars.png");
+			z-index: 90;
+		}
+		.ship, .moon{	
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="falling-girl">
+
+		<div class="girl"></div>
+
+		<div id="slide-1">
+			<div class="bcg">
+				<div class="hsContainer">
+					<div class="hsContent">
+						<div class="stars">
+							<img 
+							data-bottom-bottom="top: 70%;"
+							data--150-bottom="top: 50%;"
+							data-center-bottom="top: 30%;"
+							data-anchor-target=".stars"
+							src="ship.png" style="width: 10%; height: 30%;" class="ship">
+							<img
+							data-top-top="right: -20%;"
+							data--200-center="right:20%;"
+							data-anchor-target=".stars"
+							src="moon.png" style="height: 30%; top: 40%;" class="moon">
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="slide-2">
+			<div class="bcg">
+				<div class="hsContainer">
+					<div class="hsContent">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="slide-3">
+			<div class="bcg">
+				<div class="hsContainer">
+					<div class="hsContent">
+						<h1>Mesosphere</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="slide-4">
+			<div class="bcg">
+				<div class="hsContainer">
+					<div class="hsContent">
+						<h1>Stratosphere</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="slide-5">
+			<div class="bcg">
+				<div class="hsContainer">
+					<div class="hsContent">
+						<div class="cloud">
+							<img 
+							data-bottom-top="opacity: 0;"
+							data-center-top="opacity: 0;"
+							data-top-top="opacity: 1;"
+							src="cloud.png">
+							<img 
+							data-bottom-top="opacity: 0;"
+							data-center-top="opacity: 0;"
+							data-top-top="opacity: 1;"
+							src="cloud.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="skrollr.min.js"></script>
+	<script>
+		var s = skrollr.init();
+	</script>
+</body>
+</html>

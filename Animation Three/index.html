@@ -7,7 +7,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
 		body{
-			background-color: #c0c3c6;
+			background-color: #000000;
 			color: #ffffff;
 		}
 		.bcg{
@@ -33,12 +33,11 @@
 			background: linear-gradient(#000000, #1f3284);
 		}
 		#slide-2 .bcg{
-			background: linear-gradient(#1f3284, #3147a5);
-			/*background: linear-gradient(#1f3284, #000000);*/
+			background: linear-gradient(#1f3284, #0077ef);
 		}
-		#slide-3 .bcg{
+		/*#slide-3 .bcg{
 			background: linear-gradient(#3147a5, #0077ef);
-		}
+		}*/
 		#slide-4 .bcg{
 			background: linear-gradient(#0077ef, #4ca5ff);
 		}
@@ -64,7 +63,7 @@
 			}
 		}
 		.falling-girl .girl{
-			animation: freak-out 1.5s steps(2) infinite;
+			animation: freak-out 1.5s steps(2) 8;
 			background: url('http://stash.rachelnabors.com/codepen/alice/alice-frightened-s41f9b8ddd1.png') 0 0 no-repeat;
   			background-size: 100% auto;
 		}
@@ -72,10 +71,39 @@
 			width: 100%;
 			height: 100%;
 			background-image: url("stars.png");
-			z-index: 90;
 		}
-		.ship, .moon{	
+		.ship, .moon, .bird, .plane{	
 			position: absolute;
+		}
+		@keyframes move-fog{
+			from{
+				background-position: 0 0;
+			}
+			to{
+				background-position: -10000px 5000px;
+			}
+		}
+		@-webkit-keyframes move-fog{
+			from {background-position: 0 0;}
+			to {background-position: -10000px 5000px;}
+		}
+		@-moz-keyframes move-fog{
+			from {background-position: 0 0;}
+			to {background-position: -10000px 5000px;}
+		}
+		@-ms-keyframes move-fog{
+			from {background-position: 0 0;}
+			to {background-position: -10000px 5000px;}
+		}
+		.fog{
+			background-image: url("twinkling.png") repeat top center;
+			z-index: 100;
+			animation-name: move-fog 200s linear infinite;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
 	</style>
 </head>
@@ -110,26 +138,23 @@
 			<div class="bcg">
 				<div class="hsContainer">
 					<div class="hsContent">
+						<h1>Thermosphere</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="slide-3">
-			<div class="bcg">
-				<div class="hsContainer">
-					<div class="hsContent">
-						<h1>Mesosphere</h1>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<div id="slide-4">
 			<div class="bcg">
 				<div class="hsContainer">
 					<div class="hsContent">
-						<h1>Stratosphere</h1>
+						<div class="fog"></div>
+						<img
+						data-center-top="left: 50%;"
+						data-center-bottom="left: 0%;"
+						data-anchor-target="#slide-4"
+						src="plane.png" class="plane">
 					</div>
 				</div>
 			</div>
@@ -144,18 +169,35 @@
 							data-bottom-top="opacity: 0;"
 							data-center-top="opacity: 0;"
 							data-top-top="opacity: 1;"
-							src="cloud.png">
+							data-anchor-target=".cloud"
+							src="bluecloud.png" class="clouds" style="width: 40%;">
 							<img 
 							data-bottom-top="opacity: 0;"
 							data-center-top="opacity: 0;"
 							data-top-top="opacity: 1;"
-							src="cloud.png">
+							data-anchor-target=".cloud"
+							src="bluecloud.png" class="clouds" style="width: 40%; position: absolute; top: 50%; left: 60%;">
+							<img
+							data-top-top="right: 0%;"
+							data-bottom-bottom="right: 30%;"
+							data-anchor-target=".bird"
+							src="bird.png" style="width: 10%; top: 40%;" class="bird">
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
+	</div>
+
+	<div id="slide-6">
+		<div class="bcg">
+			<div class="hsContainer">
+				<div class="hsContent">
+					<p>THE END!</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="skrollr.min.js"></script>

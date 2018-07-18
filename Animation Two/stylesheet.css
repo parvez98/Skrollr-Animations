@@ -1,0 +1,66 @@
+		body{
+			background-color: #003791;
+			color: white;
+			text-align: center;
+			font-family: 'Gaegu', cursive;
+		}
+		.bcg{
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			height: 100%;
+			width: 100%;
+		}
+		.hsContainer{
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.hsContent{
+			height: 550px;
+			max-width: 450px;
+			margin: -150px auto 0 auto;
+			display: table-cell;
+			padding: 0 8%;
+		}
+		#slide-1 .bcg{
+			background-image: url(slide1.jpg);
+		}
+		#slide-2 .bcg{
+			background-color: #010101;
+			height: 310px;
+			text-align: center;
+		}
+		#slide-3 .bcg{
+			background-image: url(slide2.jpg);
+			background-repeat: repeat-x;
+		}
+		#slide-4 .bcg{
+			background-color: black;
+			height: 400px;
+			text-align: center;
+		}
+		#slide-1 h1{
+			font-size: 100px;
+			position: absolute;
+			bottom: 5%;
+		}
+		#slide-2 h1{
+			font-size: 70px;
+		}
+		#footer{
+			padding-top: 30px;
+			height: 160px;
+  			background-color: #f2f2f2;
+  		}
+  		#footer strong{
+  			text-decoration: underline;
+  		}
+  		#footer span{
+  			color: black;
+  			width: 80px;
+  		}

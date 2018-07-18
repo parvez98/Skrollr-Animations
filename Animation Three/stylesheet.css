@@ -1,0 +1,70 @@
+		body{
+			background-color: #000000;
+			color: #ffffff;
+			font-family: 'Gaegu', cursive;
+		}
+		.bcg{
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		.hsContainer{
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.hsContent{
+			height: 615px;
+			display: table-cell;
+			padding: 0 8%;
+		}
+		#slide-1 .bcg{
+			background: linear-gradient(#000000, #1f3284);
+		}
+		#slide-2 .bcg{
+			background: linear-gradient(#1f3284, #0077ef);
+		}
+		#slide-4 .bcg{
+			background: linear-gradient(#0077ef, #4ca5ff);
+		}
+		#slide-5 .bcg{
+			background: linear-gradient(#4ca5ff, #72a8ff);
+		}
+		#slide-6 .bcg{
+			background-color: #72a8ff;
+		}
+		.girl{
+			background-image: url('http://stash.rachelnabors.com/codepen/alice/alice-fall-saebaba4ad9.png');
+			width: 30%;
+			padding-top: 48.73047%;
+			top: -10%;
+			left: 50%;
+			margin-left: -15.625%;
+			position: fixed;
+			z-index: 20;
+		}
+		@keyframes freak-out{
+			0%{
+				background-position: 0 0 ;
+			}
+			100%{
+				background-position: 0 200%;
+			}
+		}
+		.falling-girl .girl{
+			animation: freak-out 1.5s steps(2) 8;
+			background: url('http://stash.rachelnabors.com/codepen/alice/alice-frightened-s41f9b8ddd1.png') 0 0 no-repeat;
+  			background-size: 100% auto;
+		}
+		.stars{
+			width: 100%;
+			height: 100%;
+			background-image: url("stars.png");
+		}
+		.ship, .moon, .bird, .plane{	
+			position: absolute;
+		}

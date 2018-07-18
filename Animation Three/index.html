@@ -5,107 +5,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-		body{
-			background-color: #000000;
-			color: #ffffff;
-		}
-		.bcg{
-			background-position: center center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-		}
-		.hsContainer{
-			display: table;
-			table-layout: fixed;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			position: relative;
-		}
-		.hsContent{
-			height: 615px;
-			display: table-cell;
-			padding: 0 8%;
-		}
-		#slide-1 .bcg{
-			background: linear-gradient(#000000, #1f3284);
-		}
-		#slide-2 .bcg{
-			background: linear-gradient(#1f3284, #0077ef);
-		}
-		/*#slide-3 .bcg{
-			background: linear-gradient(#3147a5, #0077ef);
-		}*/
-		#slide-4 .bcg{
-			background: linear-gradient(#0077ef, #4ca5ff);
-		}
-		#slide-5 .bcg{
-			background-color: #4ca5ff;
-		}
-		.girl{
-			background-image: url('http://stash.rachelnabors.com/codepen/alice/alice-fall-saebaba4ad9.png');
-			width: 30%;
-			padding-top: 48.73047%;
-			top: -10%;
-			left: 50%;
-			margin-left: -15.625%;
-			position: fixed;
-			z-index: 20;
-		}
-		@keyframes freak-out{
-			0%{
-				background-position: 0 0 ;
-			}
-			100%{
-				background-position: 0 200%;
-			}
-		}
-		.falling-girl .girl{
-			animation: freak-out 1.5s steps(2) 8;
-			background: url('http://stash.rachelnabors.com/codepen/alice/alice-frightened-s41f9b8ddd1.png') 0 0 no-repeat;
-  			background-size: 100% auto;
-		}
-		.stars{
-			width: 100%;
-			height: 100%;
-			background-image: url("stars.png");
-		}
-		.ship, .moon, .bird, .plane{	
-			position: absolute;
-		}
-		@keyframes move-fog{
-			from{
-				background-position: 0 0;
-			}
-			to{
-				background-position: -10000px 5000px;
-			}
-		}
-		@-webkit-keyframes move-fog{
-			from {background-position: 0 0;}
-			to {background-position: -10000px 5000px;}
-		}
-		@-moz-keyframes move-fog{
-			from {background-position: 0 0;}
-			to {background-position: -10000px 5000px;}
-		}
-		@-ms-keyframes move-fog{
-			from {background-position: 0 0;}
-			to {background-position: -10000px 5000px;}
-		}
-		.fog{
-			background-image: url("twinkling.png") repeat top center;
-			z-index: 100;
-			animation-name: move-fog 200s linear infinite;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-	</style>
+  	<link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 	<div class="falling-girl">
@@ -137,13 +38,16 @@
 		<div id="slide-2">
 			<div class="bcg">
 				<div class="hsContainer">
-					<div class="hsContent">
-						<h1>Thermosphere</h1>
+					<div class="hsContent" style="height: 750px;">
+						<img
+						data-center-top="transform: translateX(550px) translateY(10px);"
+						data-top-center="transform: translateX(100px) translateY(200px);"
+						data-anchor-target="#slide-2"
+						src="fire.png" style="width: 40%; height: 60%;" class="fireone">	
 					</div>
 				</div>
 			</div>
 		</div>
-
 
 		<div id="slide-4">
 			<div class="bcg">
@@ -193,8 +97,13 @@
 	<div id="slide-6">
 		<div class="bcg">
 			<div class="hsContainer">
-				<div class="hsContent">
-					<p>THE END!</p>
+				<div class="hsContent" style="height: 600px;">
+					<img src="house.png" style="width: 45%;">
+					<p 
+					data-center-top="opacity: 0;"
+					data-center-center="opacity: 1;"
+					data-anchor-target="#slide-6"
+					style="font-size: 60px; position: absolute; left: 70%; top: 30%; background-color: #0fc405;">She's home!</p>
 				</div>
 			</div>
 		</div>
